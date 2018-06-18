@@ -1,5 +1,6 @@
 package com.aws.codestar.projecttemplates.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,7 +13,8 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/")
 public class HelloWorldController {
 
-    private final String siteName;
+    /*@Autowired
+	private final String siteName;
 
     public HelloWorldController(final String siteName) {
         this.siteName = siteName;
@@ -23,6 +25,11 @@ public class HelloWorldController {
         ModelAndView mav = new ModelAndView("index");
         mav.addObject("siteName", this.siteName);
         return mav;
-    }
+    }*/
+	@RequestMapping("home")
+	public String homePage()
+	{
+		return "index";
+	}
 
 }
