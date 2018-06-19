@@ -24,9 +24,31 @@ artifacts:
   files:
     - 'ROOT/WEB-INF/classes/application.properties'
     - 'ROOT/WEB-INF/classes/com/omkarsh/projecttemplates/HelloWorldAppInitializer.class'
-    - 'ROOT/WEB-INF/classes/com/omkarsh/configuration/ApplicationConfig.class'
-    - 'ROOT/WEB-INF/classes/com/omkarsh/configuration/MvcConfig.class'
-    - 'ROOT/WEB-INF/classes/com/omkarsh/controller/HelloWorldController.class'
+    - 'ROOT/WEB-INF/classes/com/omkarsh/configuration/*'
+    - 'ROOT/WEB-INF/classes/com/omkarsh/controller/*'
+    - 'ROOT/WEB-INF/classes/com/omkarsh/dao/*'
+    - 'ROOT/WEB-INF/classes/com/omkarsh/service/*'
+    - 'ROOT/WEB-INF/classes/com/entity/*'
     - 'ROOT/WEB-INF/lib/*'
-    - 'ROOT/views/index.jsp'
+    - 'ROOT/views/*'
     - 'ROOT/WEB-INF/classes/static/*'
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

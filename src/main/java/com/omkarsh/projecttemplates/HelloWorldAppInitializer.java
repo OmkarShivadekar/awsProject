@@ -2,13 +2,15 @@ package com.omkarsh.projecttemplates;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import com.omkarsh.configuration.MvcConfig;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages={"com"},exclude = {JpaRepositoriesAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
 public class HelloWorldAppInitializer extends SpringBootServletInitializer {
 
 	
