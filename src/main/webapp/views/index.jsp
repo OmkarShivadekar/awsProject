@@ -34,7 +34,7 @@
           <ul>
             <li><a class="home-link" href="https://aws.amazon.com/">Home</a></li>
             <li><a href="https://aws.amazon.com/what-is-cloud-computing/">About</a></li>
-            <li><a href="https://aws.amazon.com/solutions/">Services</a></li>
+            <li><a href="/result">Student Result</a></li>
             <li><a href="https://aws.amazon.com/contact-us/">Contact</a></li>
           </ul>
         </nav>
@@ -55,6 +55,6 @@
       <p class="footer-contents">Designed and developed by Omkar Shivadekar.</p>
     </footer>
 
-    <script src=/set-background.js"></script>
+    <script src="/set-background.js"></script>
   </body>
 </html>
