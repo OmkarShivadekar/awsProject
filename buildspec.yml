@@ -23,10 +23,10 @@ artifacts:
   type: zip
   files:
     - 'ROOT/WEB-INF/classes/application.properties'
-    - 'ROOT/WEB-INF/classes/com/aws/codestar/projecttemplates/HelloWorldAppInitializer.class'
-    - 'ROOT/WEB-INF/classes/com/aws/codestar/projecttemplates/configuration/ApplicationConfig.class'
-    - 'ROOT/WEB-INF/classes/com/aws/codestar/projecttemplates/configuration/MvcConfig.class'
-    - 'ROOT/WEB-INF/classes/com/aws/codestar/projecttemplates/controller/HelloWorldController.class'
+    - 'ROOT/WEB-INF/classes/com/omkarsh/projecttemplates/HelloWorldAppInitializer.class'
+    - 'ROOT/WEB-INF/classes/com/omkarsh/configuration/ApplicationConfig.class'
+    - 'ROOT/WEB-INF/classes/com/omkarsh/configuration/MvcConfig.class'
+    - 'ROOT/WEB-INF/classes/com/omkarsh/controller/HelloWorldController.class'
     - 'ROOT/WEB-INF/lib/*'
     - 'ROOT/views/index.jsp'
     - 'ROOT/WEB-INF/classes/static/*'
