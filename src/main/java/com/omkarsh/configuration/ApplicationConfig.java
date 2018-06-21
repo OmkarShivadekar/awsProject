@@ -3,6 +3,8 @@ package com.omkarsh.configuration;
 import java.beans.PropertyVetoException;
 import java.util.Properties;
 
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -56,7 +58,7 @@ public class ApplicationConfig {
 	  private String ENTITYMANAGER_PACKAGES_TO_SCAN;
 	  
 	  @Bean
-	  public ComboPooledDataSource myDataSource() throws PropertyVetoException
+	  public DataSource myDataSource() throws PropertyVetoException
 	  {
 		  ComboPooledDataSource dataSource = new ComboPooledDataSource();
 		  dataSource.setDriverClass(DB_DRIVER);

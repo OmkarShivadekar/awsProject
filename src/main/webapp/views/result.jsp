@@ -16,17 +16,23 @@ body {
   }
  
 </style>
+<meta name="_csrf" content="${_csrf.token}"/>
+	<!-- default header name is X-CSRF-TOKEN -->
+<meta name="_csrf_header" content="${_csrf.headerName}"/>
 </head>
 <body>
 	
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">Telusko Assignment by Omkar Shivadekar</a>
+      <a class="navbar-brand" href="">Omkar Shivadekar</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="nav navbar-nav  navbar-right" style="margin-left: 630px;">
+        <ul class="nav navbar-nav  navbar-right" style="margin-left: 750px;">
           <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="http://omkarsh.com/" target="_blank">Portfolio <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
@@ -146,12 +152,16 @@ body {
 <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-    //$('#myTable').dataTable();
+    $('#myTable').dataTable();
 });
 
 function resetTableData()
 {
 	document.getElementById("age").selectedIndex = "0";
+	
+	var token = $("meta[name='_csrf']").attr("content");
+	var header = $("meta[name='_csrf_header']").attr("content");
+	
 	//alert('working');
 	
 	 $.ajax({
@@ -159,6 +169,10 @@ function resetTableData()
 		  url: "${pageContext.request.contextPath}/reset.htm",
 		  cache: false,    
 		  data:"randon=omkar",
+		  beforeSend: function(xhr) {
+	            // here it is
+	            xhr.setRequestHeader(header, token);
+	      },
 		  success: function(response){
 		  var obj = JSON.parse(response);
 		  setResetData(obj); 
@@ -198,6 +212,10 @@ function getData()
 	var a = document.getElementById("age").selectedIndex;
 	var age = document.getElementsByTagName("option")[a].value;
 	
+	var token = $("meta[name='_csrf']").attr("content");
+	var header = $("meta[name='_csrf_header']").attr("content");
+	
+	
 	var city = $("input:radio[name=city]:checked").val();
 	
 	if(age=='Select')
@@ -211,6 +229,10 @@ function getData()
 			  url: "${pageContext.request.contextPath}/search.htm",
 			  cache: false,    
 			  data:{"city":city,"age":age},
+			  beforeSend: function(xhr) {
+		            // here it is
+		            xhr.setRequestHeader(header, token);
+		      },
 			  success: function(response){
 			  var obj = JSON.parse(response);
 			  setInTable(obj,city,age); 

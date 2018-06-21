@@ -23,7 +23,7 @@ artifacts:
   type: zip
   files:
     - 'ROOT/WEB-INF/classes/application.properties'
-    - 'ROOT/WEB-INF/classes/com/omkarsh/projecttemplates/HelloWorldAppInitializer.class'
+    - 'ROOT/WEB-INF/classes/com/omkarsh/projecttemplates/*'
     - 'ROOT/WEB-INF/classes/com/omkarsh/configuration/*'
     - 'ROOT/WEB-INF/classes/com/omkarsh/controller/*'
     - 'ROOT/WEB-INF/classes/com/omkarsh/dao/*'

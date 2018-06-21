@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,6 +36,27 @@ public class HelloWorldController {
 		
 		return "result";
 	}
+	
+	@RequestMapping("admin")
+	public String showAdminModule()
+	{
+		
+		return "admin";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	//AJAX method for getting top 5 students details
 	@RequestMapping(value="/search.htm",method = RequestMethod.POST)

@@ -53,7 +53,7 @@ footer .footer-contents {
 .website-nav {
   position: relative;
   padding: 5rem;
-  padding-left: 940px;
+  padding-left: 830px;
 }
 
 .website-nav ul {
@@ -87,6 +87,7 @@ footer .footer-contents {
 .message .twitter-link {
   float: left;
   margin-right: 20px;
+  margin-top: 13px;
 }
 
 .message .twitter-link img {
@@ -145,7 +146,7 @@ footer .footer-contents {
 @media (min-height: 500px) and (min-width: 700px) {
   .message {
     padding: 0;
-    width: 50%;
+    width: 53%;
     left: calc(50vw - 5rem);
     top: calc(15vh - 5rem);
   }

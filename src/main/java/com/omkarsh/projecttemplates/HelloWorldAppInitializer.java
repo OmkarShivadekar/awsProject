@@ -8,7 +8,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import com.omkarsh.configuration.MvcConfig;
+import com.omkarsh.configuration.DemoSecurityConfig;
 
 @SpringBootApplication(scanBasePackages={"com"},exclude = {JpaRepositoriesAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
 public class HelloWorldAppInitializer extends SpringBootServletInitializer {

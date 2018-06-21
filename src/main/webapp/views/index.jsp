@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
@@ -11,9 +14,26 @@
     <spring:url value="/resources/styles.css" var="stylesCss" />
     <spring:url value="/resources/set-background.js" var="setBackgroundJs" />
     <spring:url value="/resources/tweet.svg" var="tweetSvg" />
-
+    
+    
     <link href="/styles.css" rel="stylesheet">
     <link href="/gradients.css" rel="stylesheet">
+    <style type="text/css">
+    	.myBtn{
+    	
+    	background:none!important;
+	     border:none; 
+	     padding:0!important;
+	    
+	    /*optional*/
+		 color:#fff;
+	     text-decoration:none;
+	     cursor:pointer;
+	     font-size: 18px;
+    	
+    	}
+    
+    </style>
   </head>
   <body class="">
     <div class="wrapper">
@@ -33,9 +53,13 @@
         <nav class="website-nav">
           <ul>
             <li><a class="home-link" href="https://aws.amazon.com/">Home</a></li>
-            <li><a href="https://aws.amazon.com/what-is-cloud-computing/">About</a></li>
-            <li><a href="/result">Student Result</a></li>
-            <li><a href="https://aws.amazon.com/contact-us/">Contact</a></li>
+            <li><a href="/admin">Admin</a></li>
+            <li><a href="/result">Student Result For Teachers</a></li>
+            <li>
+            	<form:form action="${pageContext.request.contextPath}/logout" method="post">
+            		<input type="submit" class="myBtn"value="Logout" >
+            	</form:form>
+            </li>
           </ul>
         </nav>
       </header>
@@ -45,8 +69,8 @@
               <img src="/tweet.svg" alt="Tweet"/>
           </a>
         <div class="text">
-          <h1>Omkar Shivadekar!</h1>
-          <h2>You just created a Java Spring web application.</h2>
+          <h1>Welcome  <security:authentication property="principal.username"/>! </h1>
+          <h2>Your Role : <security:authentication property="principal.authorities"/></h2>
         </div>
       </div>
     </div>
